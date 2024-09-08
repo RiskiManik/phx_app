@@ -1,0 +1,21 @@
+<h1>About <%= @id %></h1>
+
+<%= case Integer.parse(@id) do %>
+  <% {id, _remainder} when id < 10 -> %>
+    <p>You are a child</p>
+  <% {id, _remainder} -> %>
+    <p>You are an adult</p>
+  <% :error -> %>
+    <p>Invalid ID</p>
+<% end %>
+
+<p>Welcome to the About page of MyApp!</p>
+
+<%!-- <.simple_form for={@form} phx-change="validate" phx-submit="save">
+  <.input field={@form[:email]} label="Email" />
+  <.input field={@form[:username]} label="Username" /> <.input field={@form[:bio]} label="Bio" />
+  <.input field={@form[:number_of_pets]} label="Number of pets" />
+  <:actions>
+    <.button>Save</.button>
+  </:actions>
+</.simple_form> --%>
